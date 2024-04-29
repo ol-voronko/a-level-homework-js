@@ -6,8 +6,8 @@ let flatNumber = floor * flats;
 
 let entrance = flatCount / flatNumber;
 
-let flatFloor = (flatCount - Math.floor(entrance) * flatNumber) / flats;
+let flatFloor = 1 + ((flatCount - 1) % flatNumber) / flats;
 
 alert(
-  "Під'їзд :" + Math.ceil(entrance) + " " + "Поверх: " + Math.ceil(flatFloor)
+  "Під'їзд :" + Math.ceil(entrance) + " " + "Поверх: " + Math.floor(flatFloor)
 );
