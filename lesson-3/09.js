@@ -1,5 +1,3 @@
 let text = prompt("Введіть рядок ");
-let textOut = text.split("\n").join("\n");
+let textOut = text.split("\\n").join("\n");
 alert(textOut);
-
-// Наче правильно,бо якщо рядок одразу введений-працює.Але щось все ж таки не так,бо з рядком отриманим через prompt не працює(
