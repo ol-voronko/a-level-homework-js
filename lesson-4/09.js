@@ -1,3 +1,3 @@
 if (!confirm("Shopping?")) {
-  alert("Go!!!");
+  alert("Ти бяка!!!");
 }
