@@ -1,10 +1,10 @@
 let userMove = prompt("Ваш хід:камінь,ножиці чи папір?");
-if (userMove.toLowerCase() === "камінь" || "ножиці" || "папір") {
-  userMove = userMove;
-} else {
-  alert("Будьте уважні!Ви ввели некорректне значення і програли(");
-}
-
+// некорректно  відпрацьовує
+// if (userMove.toLowerCase() === "камінь" || "ножиці" || "папір") {
+//   userMove === userMove;
+// } else {
+//   alert("Будьте уважні!Ви ввели некорректне значення і програли(");
+// }
 let botMove = Math.floor(Math.random() * 3);
 if (botMove == 0) {
   botMove = "камінь";
