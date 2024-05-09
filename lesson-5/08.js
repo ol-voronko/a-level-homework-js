@@ -13,3 +13,11 @@ second.push(first.pop());
 second.push(first.pop());
 second.push(first.pop());
 console.log(second);
+
+const third = [];
+third.unshift(second.shift());
+third.unshift(second.shift());
+third.unshift(second.shift());
+third.unshift(second.shift());
+third.unshift(second.shift());
+console.log(third);
