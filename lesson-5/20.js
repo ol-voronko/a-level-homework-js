@@ -5,11 +5,12 @@ const arrays = [
   [0, 3, 6, 9, 12],
   [0, 4, 8, 12, 16],
 ];
-let i;
 let str = "<table>";
 for (const array of arrays) {
-  str += i % 2 !== 0 ? '<tr style="color:blue">' : '<tr style="color:red";>';
-
+  str +=
+    arrays.indexOf(array) % 2 !== 0
+      ? '<tr style="background-color:blue">'
+      : '<tr style="background-color:yellow">';
   for (const number of array) {
     str += "<td>" + number + "</td>";
   }
