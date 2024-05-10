@@ -11,7 +11,6 @@ for (const array of arrays) {
     arrays.indexOf(array) % 2 !== 0
       ? '<tr style="background-color:blue">'
       : '<tr style="background-color:yellow">';
-  // str += i % 2 !== 0 ? '<tr style="color:blue">' : '<tr style="color:red";>';тут помилка,але я її ще не знайшла(
 
   for (const number of array) {
     str += "<td>" + number + "</td>";
