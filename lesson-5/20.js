@@ -8,7 +8,7 @@ const arrays = [
 let i;
 let str = "<table>";
 for (const array of arrays) {
-  str += i % 2 !== 0 ? '<tr style="color:blue">' : '<tr style="color:red";>';
+  // str += i % 2 !== 0 ? '<tr style="color:blue">' : '<tr style="color:red";>';тут помилка,але я її ще не знайшла(
 
   for (const number of array) {
     str += "<td>" + number + "</td>";
