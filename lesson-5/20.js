@@ -16,4 +16,4 @@ for (const array of arrays) {
   str += "</tr>";
 }
 str += "</table >";
-document.write(str.padStart(5));
+document.write(str);
