@@ -50,3 +50,17 @@ let body = {
 };
 console.log(body.children[1].children[1].children);
 console.log(body.children[0].children[3].attrs.id);
+
+// Parent
+body.children[0].parent = body;
+body.children[1].parent = body;
+body.children[0].children[0].parent = body.children[0];
+body.children[0].children[1].parent = body.children[0];
+body.children[0].children[2].parent = body.children[0];
+body.children[0].children[3].parent = body.children[0];
+body.children[1].children[0].parent = body.children[1];
+body.children[1].children[1].parent = body.children[1];
+
+// Change OK
+body.children[1].children[0].attrs[prompt("Введіть атрибут тега <button>")] =
+  prompt("Введіть значення");
