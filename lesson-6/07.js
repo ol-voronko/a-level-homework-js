@@ -14,5 +14,3 @@ fetch("https://open.er-api.com/v6/latest/USD")
 
     return result;
   });
-// 1000 uah   1$ = 39 Uah 1$ = 2 EUR
-// 1000/39 = 300 $
