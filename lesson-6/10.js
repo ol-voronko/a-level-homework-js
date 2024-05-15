@@ -7,6 +7,7 @@ const car = {
   Origin: "USA",
   in_production: false,
 };
+
 let str = "<form>";
 for (const [key, value] of Object.entries(car)) {
   if (typeof value === "string") {

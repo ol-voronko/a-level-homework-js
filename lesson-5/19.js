@@ -1,9 +1,9 @@
 const currencies = ["USD", "EUR", "GBP", "UAH"];
-let str = "<table>";
+let str = '<table style="border: 1px solid black;border-collapse:collapse; ">';
 for (const currency of currencies) {
-  str += "<tr>";
+  str += "<tr >";
   for (const letter of currency) {
-    str += "<td>" + letter + "</td>";
+    str += `<td style="border: 1px solid black;border-collapse:collapse;"> ${letter} </td>`;
   }
   str += "</tr>";
 }

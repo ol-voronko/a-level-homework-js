@@ -3,18 +3,22 @@ fetch("https://open.er-api.com/v6/latest/USD")
   .then((data) => {
     console.log(data);
 
-    let str = "<table>";
+    let str =
+      '<table style="border: 1px solid black;border-collapse:collapse; ">';
     str += '<tr style="background-color:grey">';
-    str += `<th>  </th>`;
+    str += `<th style="border: 1px solid black;border-collapse:collapse; ">  </th>`;
     for (const currency of Object.keys(data.rates)) {
-      str += "<td>" + currency + "</td>";
+      str += `<td style="border: 1px solid black;border-collapse:collapse; " > ${currency} </td>`;
     }
     str += "</tr>";
     for (const [currency, rate] of Object.entries(data.rates)) {
       str += "<tr>";
-      str += "<td>" + currency + "</td>";
+      str += `<td style="border: 1px solid black;border-collapse:collapse; "> ${currency} </td>`;
       for (const currency of Object.keys(data.rates)) {
-        str += `<td> ${((1 / rate) * data.rates[currency]).toFixed(3)} </td>`;
+        str += `<td style="border: 1px solid black;border-collapse:collapse; "> ${(
+          (1 / rate) *
+          data.rates[currency]
+        ).toFixed(3)} </td>`;
       }
       str += "</tr>";
     }
