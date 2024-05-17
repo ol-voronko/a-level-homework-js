@@ -10,8 +10,19 @@ let createForm = (obj) => {
     }
   }
   str += "</form>";
-  return str;
+
+  return document.write(str);
 };
+const car = {
+  Name: "chevrolet chevelle malibu",
+  Cylinders: 8,
+  Displacement: 307,
+  Horsepower: 130,
+  Weight_in_lbs: 3504,
+  Origin: "USA",
+  in_production: false,
+};
+createForm(car);
 
 // АБО
 
