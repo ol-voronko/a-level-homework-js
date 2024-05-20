@@ -2,9 +2,9 @@ let createForm = (obj) => {
   let str = "<form>";
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "string") {
-      str += `<label> ${key}: <input type="text" value="${value}"/></label>`;
+      str += `<label> ${key}: <input type="text" value="${value}"/></label><br>`;
     } else if (typeof value === "number") {
-      str += `<label> ${key}: <input type="number" value="${value}"/></label>`;
+      str += `<label> ${key}: <input type="number" value="${value}"/></label><br>`;
     } else if (typeof value === "boolean") {
       str += `<label> ${key}: <input type="checkbox" /></label>`;
     }
@@ -26,7 +26,7 @@ let createForm = (obj) => {
 //   for (const [key, value] of Object.entries(obj)) {
 //     str += `<label> ${key}: <input type=
 //       "${types[typeof value]}"
-//      value="${value}" /></label>`;
+//      value="${value}" /></label><br>`;
 //   }
 //     str += "</form>";
 //     return str;
