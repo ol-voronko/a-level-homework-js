@@ -85,5 +85,6 @@ for (const person of persons) {
 }
 
 str += "</tr>";
+str += "</table>";
 
 document.write(str);
