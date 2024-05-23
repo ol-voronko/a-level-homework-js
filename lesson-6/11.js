@@ -68,9 +68,7 @@ console.log(columns);
 let str = '<table style="border: 1px solid black;border-collapse:collapse;">';
 str += '<tr style="background-color:grey;">';
 for (const column of columns) {
-  str += `<th style="border: 1px solid black;border-collapse:collapse;"> ${column.padStart(
-    20
-  )}  </th>`;
+  str += `<th style="border: 1px solid black;border-collapse:collapse;"> ${column}  </th>`;
 }
 str += "</tr>";
 
