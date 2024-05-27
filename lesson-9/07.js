@@ -1,10 +1,10 @@
 let str = "",
   n;
-for (let i = 1; i < n + 1; i++) {
+for (let i = 0; i < n; i++) {
   if (i % 2) {
-    str += "#";
-  } else {
     str += ".";
+  } else {
+    str += "#";
   }
 }
 console.log(str);
