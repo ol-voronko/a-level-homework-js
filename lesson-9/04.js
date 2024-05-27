@@ -6,4 +6,4 @@ while ((a = Math.random())) {
     break;
   }
 }
-console.log(`Кількість ітерацій ${i}`);
+alert(`Кількість ітерацій ${i}`);
