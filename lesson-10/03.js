@@ -15,7 +15,7 @@ function createPersonClosure(name, surname) {
     return age;
   }
   function getFullName() {
-    return `${name} ${fatherName !== undefined ? fatherName : ""} ${surname}`;
+    return `${name} ${fatherName || ""} ${surname}`;
   }
   function setName(newName) {
     newName ===
