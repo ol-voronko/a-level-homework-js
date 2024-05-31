@@ -10,11 +10,3 @@ function createPerson(name, surname) {
     getFullName,
   };
 }
-const a = createPerson("Vasya", "pupkin");
-console.log(a.getFullName());
-a.fatherName = "Ivanovich";
-console.log(a.getFullName());
-const b = createPerson("Ганна", "Іванова");
-console.log(b.getFullName());
-b.fatherName = "vnbm";
-console.log(b.getFullName());
