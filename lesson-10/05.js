@@ -1,12 +1,17 @@
 function isSorted(...params) {
-  arr1 = [...params];
-  arr = params.sort((a, b) => (a > b ? 1 : -1));
-  let a;
-  for (let i = 0; i < arr1.length; i++) {
-    a = arr[i] === arr1[i];
-    if (!a) {
-      break;
+  let i;
+  for (i = 1; i < params.length + 1; i++) {
+    if (params[i] < params[i - 1]) {
+      return false;
     }
   }
-  return a;
+  return true;
 }
+
+let array = [];
+
+while ((el = +prompt("Напишіть щось"))) {
+  array.push(el);
+}
+console.log(array);
+console.log(isSorted(...array));
