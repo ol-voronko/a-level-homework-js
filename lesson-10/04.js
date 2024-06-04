@@ -24,25 +24,27 @@ function createPersonClosureDestruct({
   function setName(newName) {
     newName ===
       newName.slice(0, 1).toUpperCase() + newName.slice(1).toLowerCase() &&
-      getName((name = newName));
+      (name = newName);
   }
 
   function setSurname(newSurname) {
     newSurname ===
       newSurname.slice(0, 1).toUpperCase() +
-        newSurname.slice(1).toLowerCase() && getSurname((surname = newSurname));
+        newSurname.slice(1).toLowerCase() && (surname = newSurname);
   }
   function setFatherName(newFatherName) {
     newFatherName ===
       newFatherName.slice(0, 1).toUpperCase() +
-        newFatherName.slice(1).toLowerCase() &&
-      getFatherName((fatherName = newFatherName));
+        newFatherName.slice(1).toLowerCase() && (fatherName = newFatherName);
   }
   function setAge(newAge) {
-    newAge > 0 && newAge < 100 && getAge((age = newAge));
+    newAge > 0 && newAge < 100 && (age = newAge);
   }
   function setFullName(newFullName) {
-    [surname, name, fatherName] = newFullName.split(" ");
+    const [newSurname, newName, newFatherName] = newFullName.split(" ");
+    setSurname(newSurname);
+    setName(newName);
+    setFatherName(newFatherName);
   }
   return {
     getName,
