@@ -26,19 +26,21 @@ function createPersonClosure(name, surname) {
   function setSurname(newSurname) {
     newSurname ===
       newSurname.slice(0, 1).toUpperCase() +
-        newSurname.slice(1).toLowerCase() && getSurname((surname = newSurname));
+        newSurname.slice(1).toLowerCase() && (surname = newSurname);
   }
   function setFatherName(newFatherName) {
     newFatherName ===
       newFatherName.slice(0, 1).toUpperCase() +
-        newFatherName.slice(1).toLowerCase() &&
-      getFatherName((fatherName = newFatherName));
+        newFatherName.slice(1).toLowerCase() && (fatherName = newFatherName);
   }
   function setAge(newAge) {
-    newAge > 0 && newAge < 100 && getAge((age = newAge));
+    newAge > 0 && newAge < 100 && (age = newAge);
   }
   function setFullName(newFullName) {
-    [surname, name, fatherName] = newFullName.split(" ");
+    const [newSurname, newName, newFatherName] = newFullName.split(" ");
+    setName(newName);
+    setSurname(newSurname);
+    setFatherName(newFatherName);
   }
   return {
     getName,
@@ -53,3 +55,7 @@ function createPersonClosure(name, surname) {
     setFullName,
   };
 }
+const b = createPersonClosure("Ганна", "Іванова");
+console.log(b.getFullName());
+b.setFullName("VBNMN Ганна cnnmbcxnbm");
+console.log(b.getSurname());
