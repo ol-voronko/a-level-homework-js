@@ -62,7 +62,10 @@ function getSetForm(parent, getSet) {
       inputs[fieldName] = input;
       input.placeholder = `${fieldName}`;
       input.type = typeof getSet[getKey]();
-      input.value = getSet[getKey]();
+
+      if (!(input.value = getSet[getKey]())) {
+        input.value = "";
+      }
       if (!(setKey in getSet)) {
         input.disabled = true;
       } else {
@@ -75,5 +78,3 @@ function getSetForm(parent, getSet) {
     }
   }
 }
-
-getSetForm(document.body, car);
