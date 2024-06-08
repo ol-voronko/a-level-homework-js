@@ -60,7 +60,7 @@ function createPersonClosure(name, surname) {
     return age;
   }
   function setFullName(newFullName) {
-    const [newSurname, newName, newFatherName] = newFullName.split(" ");
+    const [newName, newFatherName, newSurname] = newFullName.split(" ");
     setName(newName);
     setSurname(newSurname);
     setFatherName(newFatherName);
