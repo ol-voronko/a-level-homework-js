@@ -11,16 +11,3 @@ const timer2 = makeProfileTimer();
 prompt("");
 alert(`Час роботи двух аlert та одного prompt ${timer()}`);
 alert(`Час роботи prompt та попереднього alert ${timer2()}`);
-
-// const a = {
-//   getValue() {
-//     console.log("GG");
-//   },
-//   setValue() {
-//     console.log("Ok");
-//   },
-// };
-// for (const field in a) {
-//   const fieldName = field.slice(3);
-//   console.log(fieldName);
-// }
