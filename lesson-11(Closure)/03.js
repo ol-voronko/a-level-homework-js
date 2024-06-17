@@ -23,6 +23,6 @@ const bindedJoiner = myBind((...params) => params.join(""), null, [
   ,
   "e",
   "f",
-]); //('a','c','d') === 'abcdef'
+]);
 console.log(bindedJoiner("a", "c", "d") === "abcdef");
 console.log(bindedJoiner("1", "2", "3") === "1b23ef");
