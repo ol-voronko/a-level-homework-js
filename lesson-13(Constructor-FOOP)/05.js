@@ -45,7 +45,7 @@ form.append(login);
 const br = document.createElement("br");
 form.append(br);
 
-let password = new Password(form, true);
+const password = new Password(form, true);
 
 const br1 = document.createElement("br");
 
