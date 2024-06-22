@@ -11,7 +11,7 @@ function Password(parent, open) {
   checkbox.onchange = () => this.setOpen(checkbox.checked);
 
   this.getOpen = function () {
-    return input.type;
+    return open;
   };
   this.setOpen = function (open) {
     checkbox.checked = open;
