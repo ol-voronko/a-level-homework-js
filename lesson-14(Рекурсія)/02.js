@@ -54,4 +54,4 @@ function domTree(parent, obj) {
   parent.append(tag);
 }
 
-domTree(document.body, body);
+domTree(document.body, table);
