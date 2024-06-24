@@ -1,11 +1,14 @@
 function fetchTable(DOM, JSON) {
   let table = document.createElement("table");
-
+  table.style = `border: 1px solid black;border-collapse:collapse; `;
   for (const [key, value] of Object.entries(JSON)) {
     const row = document.createElement("tr");
+
     const nameParam = document.createElement("td");
+    nameParam.style = `border: 1px solid black;border-collapse:collapse; `;
     nameParam.innerText = `${key}`;
     const valueParam = document.createElement("td");
+    valueParam.style = `border: 1px solid black;border-collapse:collapse; `;
     valueParam.innerText = `${value}`;
     row.append(nameParam);
     row.append(valueParam);
