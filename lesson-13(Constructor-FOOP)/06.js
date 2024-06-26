@@ -65,9 +65,12 @@ function LoginForm(parent) {
   const button = document.createElement("button");
   button.innerText = "Log in";
   button.disabled = true;
+  button.onclick = () => {
+    onClick();
+  };
   form.append(button);
   login.oninput = password.onChange = () => {
-    button.disabled = !(loginForm.getLogin() && password.getValue());
+    button.disabled = !(this.getLogin() && password.getValue());
   };
 }
 let loginForm = new LoginForm(document.body);
