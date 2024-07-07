@@ -12,11 +12,36 @@ const inputMessage = document.createElement("input");
 inputMessage.placeholder = "Message";
 divSendMessage.append(inputMessage);
 
+inputNick.style =
+  inputMessage.style = `width:95%;background-color:aliceblue;color:blue; border:1px solid lightblue`;
+
+inputNick.onmouseover = () => {
+  inputNick.style.backgroundColor = `lightcyan`;
+};
+inputNick.onmouseout = () => {
+  inputNick.style.backgroundColor = `aliceblue`;
+};
+
+inputMessage.onmouseover = () => {
+  inputMessage.style.backgroundColor = `lightcyan`;
+};
+inputMessage.onmouseout = () => {
+  inputMessage.style.backgroundColor = `aliceblue`;
+};
 const br2 = document.createElement("br");
 divSendMessage.append(br2);
 
 const sendButton = document.createElement("button");
 sendButton.innerText = "Send";
+sendButton.style = `width:96%;background-color:lightgrey;color:blue;border:1px lightblue solid;border-radius:15px`;
+
+sendButton.addEventListener("mouseover", () => {
+  sendButton.style.backgroundColor = `lightblue`;
+});
+sendButton.addEventListener("mouseout", () => {
+  sendButton.style.backgroundColor = `lightgrey`;
+});
+
 sendButton.onclick = () => {
   sendAndCheck();
 };
