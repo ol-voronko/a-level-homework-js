@@ -64,18 +64,23 @@ async function getMessages() {
     func: "getMessages",
     nextMessageId,
   });
+  nextMessageId = messages.nextMessageId;
   for (const message of messages.data) {
     const divMessage = document.createElement("div");
-    divMessage.innerText = ` ${message.nick} :${message.message}`;
+    divMessage.innerText = ` ${message.nick} :${
+      message.message
+    }      ${new Date(message.timestamp).getHours()} : ${new Date(
+      message.timestamp
+    ).getMinutes()}`;
     divChat.prepend(divMessage);
   }
-  nextMessageId = messages.nextMessageId;
 }
 
 async function sendAndCheck() {
   const nick = inputNick.value;
   const message = inputMessage.value;
-  await Promise.all([sendMessage(nick, message), getMessages()]);
+  await sendMessage(nick, message);
+  await getMessages();
 }
 
 async function checkLoop() {
