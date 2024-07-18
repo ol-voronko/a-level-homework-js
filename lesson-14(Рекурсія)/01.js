@@ -37,7 +37,7 @@ function htmlTree(obj) {
   let str = `< ${obj.tagName} `;
   if (typeof obj.attrs === "object") {
     for (const [key, value] of Object.entries(obj.attrs)) {
-      str += ` ${key} ='${value}'`;
+      str += ` ${key} =${value}`;
     }
   }
   str += `>`;
