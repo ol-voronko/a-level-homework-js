@@ -590,23 +590,28 @@ function drawLogin() {
   const [, route] = location.hash.split("/");
   if (route !== "login") return;
   main.innerHTML = "";
+
   if (store.getState().auth.token) {
     location.hash = "#/history/";
     return;
+  }
+  if (store.getState().promise.login) {
+    if (store.getState().promise.login.payload === null) {
+      main.innerHTML += `<p style="color:red;">Невірно вказані логін або пароль!</p>`;
+    }
   }
   const loginForm = new LoginForm(main);
   loginForm.onClick = (login, password) => {
     store.dispatch(actionFullLogin(login, password));
   };
 }
-
+store.subscribe(drawLogin);
 const actionFullLogin = (login, password) => async (dispatch, getState) => {
   //dispatch повертає те, що повернув thunk, що повертається actionLogin, а там проміс,
   //бо actionPromise повертає асинхронну функцію
   const token = await dispatch(actionLogin(login, password));
 
   dispatch(actionAuthLogin(token));
-
   if (getState().auth.token) {
     location.hash = "#/history/";
   }
