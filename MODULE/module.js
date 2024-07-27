@@ -513,7 +513,9 @@ function Password(parent, open) {
   const input = document.createElement("input");
   const checkbox = document.createElement("input");
 
+  input.placeholder = "password";
   input.type = open ? "text" : "password";
+
   checkbox.type = "checkbox";
   checkbox.checked = open;
   parent.append(input);
@@ -553,6 +555,7 @@ function Password(parent, open) {
 
 function LoginForm(parent) {
   const login = document.createElement("input");
+  login.placeholder = "login";
   parent.append(login);
   login.oninput = () => this.setLogin(login.value);
   this.getLogin = function () {
