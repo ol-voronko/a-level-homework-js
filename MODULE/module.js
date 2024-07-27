@@ -513,6 +513,7 @@ function Password(parent, open) {
   const input = document.createElement("input");
   const checkbox = document.createElement("input");
 
+  input.type = open ? "text" : "password";
   checkbox.type = "checkbox";
   checkbox.checked = open;
   parent.append(input);
