@@ -4,6 +4,7 @@ function Password(parent, open) {
 
   checkbox.type = "checkbox";
   checkbox.checked = open;
+  input.type = open ? "text" : "password";
   parent.append(input);
   parent.append(checkbox);
 
