@@ -3,6 +3,11 @@ class RGB {
   #g;
   #b;
 
+  #hexColor(color) {
+    if (color) {
+      return color.toString(16).padStart(2, 0);
+    }
+  }
   get r() {
     return this.#r;
   }
@@ -63,9 +68,16 @@ class RGB {
   }
 
   get hex() {
-    return `#${this.#r.toString(16).padStart(2, 0)}${this.#g
-      .toString(16)
-      .padStart(2, 0)}${this.#b.toString(16).padStart(2, 0)}`;
+    // Можна і так
+
+    // return `#${this.#r.toString(16).padStart(2, 0)}${this.#g
+    //   .toString(16)
+    //   .padStart(2, 0)}${this.#b.toString(16).padStart(2, 0)}`;
+
+    // Але так мабуть краще?
+    return `#${this.#hexColor(this.#r)}${this.#hexColor(
+      this.#g
+    )}${this.#hexColor(this.#b)}`;
   }
   set hex(newHex) {
     if (newHex.match(/^#([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})$/)) {
@@ -78,13 +90,13 @@ class RGB {
   }
 }
 const rgb = new RGB();
-rgb.r = 16;
-rgb.g = 10;
-rgb.b = 150;
+rgb.r = 15;
+rgb.g = 128;
+rgb.b = 192;
 console.log(rgb.hex); //#0F80C0
 console.log(rgb.rgb); //rgb(15,128,192)
 rgb.hex = "#2030FF";
 
 console.log(rgb.rgb);
-rgb.rgb = "vccvrgb(100, 90, 50)";
+rgb.rgb = "rgb(100, 90, 50)";
 console.log(rgb.r, rgb.g, rgb.b);
