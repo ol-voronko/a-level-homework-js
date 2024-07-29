@@ -69,10 +69,6 @@ class RGB {
   }
 
   get hex() {
-    // return `#${this.#r.toString(16).toUpperCase().padStart(2, 0)}${this.#g
-    //   .toString(16).toUpperCase()
-    //   .padStart(2, 0)}${this.#b.toString(16).toUpperCase().padStart(2, 0)}`;
-
     return `#${this.#hexColor(this.#r)}${this.#hexColor(
       this.#g
     )}${this.#hexColor(this.#b)}`;
@@ -91,10 +87,6 @@ class RGB {
 class RGBA extends RGB {
   #a;
 
-  //   constructor() {
-  //     super();
-  //     console.log(this);
-  //   }
   get a() {
     return this.#a;
   }
@@ -145,12 +137,12 @@ class RGBA extends RGB {
     this.#a = +newRGBA.split(",").pop().slice(0, -1);
     let arrRGB = newRGBA.split(",");
     arrRGB.pop();
-    let rgb = arrRGB.join() + ")";
+    let rgb = (arrRGB.join() + ")").replace("rgba", "rgb");
     let rgbMatch = rgb.match(
-      /^(rgba)?\(?([01]?\d\d?|2[0-4]\d|25[0-5])(\W+)([01]?\d\d?|2[0-4]\d|25[0-5])\W+(([01]?\d\d?|2[0-4]\d|25[0-5])\)?)$/
+      /^(rgb)?\(?([01]?\d\d?|2[0-4]\d|25[0-5])(\W+)([01]?\d\d?|2[0-4]\d|25[0-5])\W+(([01]?\d\d?|2[0-4]\d|25[0-5])\)?)$/
     );
     if (rgbMatch) {
-      super.rgb = rgb.replace("rgba", "rgb");
+      super.rgb = rgb;
     } else {
       throw new SyntaxError("RGBA");
     }
@@ -163,7 +155,7 @@ class RGBA extends RGB {
     } else if (newColor.startsWith("rgb(")) {
       super.rgb = newColor;
     } else {
-      throw new SyntaxError("Неправильний формат кольору");
+      throw new SyntaxError();
     }
   }
 }
