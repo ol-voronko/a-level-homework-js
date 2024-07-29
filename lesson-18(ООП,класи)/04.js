@@ -5,7 +5,7 @@ class RGB {
 
   #hexColor(color) {
     if (color) {
-      return color.toString(16).padStart(2, 0);
+      return color.toString(16).toUpperCase().padStart(2, 0);
     }
   }
   get r() {
@@ -17,7 +17,7 @@ class RGB {
       if (newR >= 0 && newR <= 255) {
         return (this.#r = newR);
       } else {
-        throw new RangeError();
+        throw new RangeError("Помилка в кольорі r");
       }
     }
   }
@@ -31,7 +31,7 @@ class RGB {
       if (newG >= 0 && newG <= 255) {
         return (this.#g = newG);
       } else {
-        throw new RangeError();
+        throw new RangeError("Помилка в кольорі g");
       }
     }
   }
@@ -44,7 +44,7 @@ class RGB {
       if (newB >= 0 && newB <= 255) {
         return (this.#b = newB);
       } else {
-        throw new RangeError();
+        throw new RangeError("Помилка в кольорі b");
       }
     }
   }
@@ -70,9 +70,9 @@ class RGB {
   get hex() {
     // Можна і так
 
-    // return `#${this.#r.toString(16).padStart(2, 0)}${this.#g
-    //   .toString(16)
-    //   .padStart(2, 0)}${this.#b.toString(16).padStart(2, 0)}`;
+    // return `#${this.#r.toString(16).toUpperCase().padStart(2, 0)}${this.#g
+    //   .toString(16).toUpperCase()
+    //   .padStart(2, 0)}${this.#b.toString(16).toUpperCase().padStart(2, 0)}`;
 
     // Але так мабуть краще?
     return `#${this.#hexColor(this.#r)}${this.#hexColor(
