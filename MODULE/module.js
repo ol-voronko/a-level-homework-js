@@ -59,11 +59,11 @@ const actionOneCategory = (_id) =>
     gql(
       `query category($q:String){
   CategoryFindOne(query:$q) {
-  name
+   name subCategories{name _id}
     goods {
       _id
       name
-      price
+      price      
       images{
       url
       }
@@ -350,11 +350,17 @@ const drawCategory = () => {
     main.innerHTML = `<img src='https://cdn.dribbble.com/users/63485/screenshots/1309731/infinite-gif-preloader.gif' />`;
   }
   if (status === "FULFILLED") {
-    const { name, goods, subcategories } = payload;
+    const { name, goods, subCategories } = payload;
     main.innerHTML = `<h1>${name}</h1>`;
-    //                      <section>ЖЫРНОСТЬ: ${mass}кг</section>
-    //                      <section style="color: ${eye_color}">Цвет глаз</section>
-    //                      `;
+
+    if (subCategories.length) {
+      const subCatLinks = document.createElement("div");
+      subCatLinks.style = `display:flex; gap:20px;margin-bottom:20px`;
+      for (const { name, _id } of subCategories) {
+        subCatLinks.innerHTML += `<a href="#/category/${_id}">${name}</a>`;
+      }
+      main.append(subCatLinks);
+    }
     for (const good of goods) {
       const { _id, name, price, images } = good;
       const section = document.createElement("section");
