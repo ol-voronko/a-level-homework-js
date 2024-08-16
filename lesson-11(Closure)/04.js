@@ -1,8 +1,8 @@
 function checkResult(original, validator) {
   function wrapper(...params) {
-    let result;
+    let result = original(...params);
 
-    while (!validator(original(...params))) {
+    while (!validator(result)) {
       result = original(...params);
     }
     return result;
