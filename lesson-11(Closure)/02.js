@@ -1,6 +1,11 @@
 function makeSaver(f) {
-  let a = f();
-  return () => a;
+  let result;
+  return () => {
+    if (result === undefined) {
+      result = f();
+    }
+    return result;
+  };
 }
 let saver = makeSaver(Math.random);
 let value1 = saver();
