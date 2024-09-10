@@ -7,6 +7,7 @@ function makeSaver(f) {
     return result;
   };
 }
+
 let saver = makeSaver(Math.random);
 let value1 = saver();
 let value2 = saver();

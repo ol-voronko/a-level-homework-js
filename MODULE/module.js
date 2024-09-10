@@ -19,7 +19,7 @@ function getGQL(endpoint) {
       })
       .then((data) => {
         if (!data.data && data.errors) {
-          throw new Error(Json.stringify(data.errors));
+          throw new Error(JSON.stringify(data.errors));
         }
         return Object.values(data.data)[0];
       });
