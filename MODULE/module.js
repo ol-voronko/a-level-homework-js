@@ -699,9 +699,9 @@ buttonLogout.onclick = () => store.dispatch(actionAuthLogout());
 const actionFullOrder = () => async (dispatch, getState) => {
   const cart = getState().cart;
   const order = {};
-  order.orderGoods = Object.values(cart).map((el) => ({
-    ...el,
-    good: { _id: el.good._id },
+  order.orderGoods = Object.values(cart).map(({ count, good: { _id } }) => ({
+    count,
+    good: { _id },
   }));
 
   try {
